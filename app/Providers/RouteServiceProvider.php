@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -65,6 +66,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
+//        Config::set('auth.guards.api.provider', request()->input('provider', starts_with(request()->path(), 'api') ? 'emprendedores' : 'users'));
         Route::prefix('api')
              ->middleware('api')
              ->namespace($this->namespace)
