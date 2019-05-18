@@ -18,3 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //Route::apiResource('productos', 'ProductController');
 Route::middleware('auth:api')->resource('/productos', 'ProductController');
+Route::post('user/register', 'Api\AuthController@register');
+Route::post('user/login', 'Api\AuthController@login');
+//Route::group(['before' => 'auth'], function () {
+    
+//});
+//Route->apiResource('user/register', 'RegisterController');
+//Route->apiResource('user/register', 'RegisterController');

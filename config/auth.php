@@ -38,12 +38,13 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'emprendedor',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'emprendedor',
+            'hash' => true,
         ],
     ],
 
@@ -65,9 +66,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'emprendedor' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\Emprendedor::class,
         ],
 
         // 'users' => [

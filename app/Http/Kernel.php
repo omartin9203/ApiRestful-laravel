@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\AuthBasic;
 use App\Http\Middleware\AuthKey;
+use App\Http\Middleware\AuthListen;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -42,6 +43,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+//            'auth.listen',
 //            AuthKey::class,
 //            AuthBasic::class,
         ],
@@ -61,5 +63,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+//        'auth.listen' => AuthListen::class,
     ];
 }

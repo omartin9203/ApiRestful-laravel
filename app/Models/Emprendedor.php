@@ -7,6 +7,7 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
@@ -36,8 +37,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Emprendedor extends Eloquent
+class Emprendedor extends Authenticatable
 {
+//    use Authenticatable;
 	protected $table = 'emprendedor';
 	protected $primaryKey = 'id_emp';
 	public $timestamps = false;
@@ -81,6 +83,7 @@ class Emprendedor extends Eloquent
 		'id_pais',
 		'admin_cabeza',
 		'cons_venta',
-		'status_cli'
+		'status_cli',
+        'api_token'
 	];
 }
